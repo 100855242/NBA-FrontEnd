@@ -38,11 +38,11 @@ export class LoginComponent implements OnInit {
 
     this.loadingService.StartLoading()
     let response = await this.userService.loginUser(credentials);
-    localStorage.setItem('token', JSON.stringify(response.token));
-    if (response.token === 'false') {
+    if (response.token === undefined) {
       this.failedLogin = true;
     }
     else {
+      localStorage.setItem('token', JSON.stringify(response.token));
       localStorage.setItem('username', credentials.username);
       this.navService.NavMyTeams();
     }
