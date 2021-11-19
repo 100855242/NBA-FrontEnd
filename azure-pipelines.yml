@@ -24,8 +24,8 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/NBA-Predictions/dist/NBA-Predictions/NBA-Predictions'
-    includeRootFolder: true
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/NBA-Predictions/dist/NBA-Predictions'
+    includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
